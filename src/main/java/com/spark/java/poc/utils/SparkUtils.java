@@ -12,6 +12,7 @@ public class SparkUtils {
 			sparkConf = new SparkConf()
 					.setAppName(appName)
 					.setMaster("local[4]")
+					.set("spark.driver.allowMultipleContexts","TRUE")
 					.set("spark.sql.warehouse.dir",
 							"D:\\Study_Document\\MyPersonal\\spark-warehouse");
 		}

@@ -4,6 +4,8 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.sql.SparkSession;
 
+import com.spark.java.poc.constants.ApplicationConstants;
+
 public class SparkUtils {
 	public static SparkConf sparkConf;
 	public static SparkSession sparkSession;
@@ -12,7 +14,7 @@ public class SparkUtils {
 			sparkConf = new SparkConf()
 					.setAppName(appName)
 					.setMaster("local[4]")
-					.set("spark.driver.allowMultipleContexts","TRUE")
+					.set("spark.driver.allowMultipleContexts",ApplicationConstants.TRUE)
 					.set("spark.sql.warehouse.dir",
 							"D:\\Study_Document\\MyPersonal\\spark-warehouse");
 		}

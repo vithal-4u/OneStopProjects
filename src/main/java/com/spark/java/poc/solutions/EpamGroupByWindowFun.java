@@ -32,8 +32,7 @@ public class EpamGroupByWindowFun {
 		//		+---+--------+------------
 		//		
 		
-		//WindowSpec window= Window.partitionBy("Location");
-		
+		WindowSpec window= Window.partitionBy("Location");
 		//empFileData.withColumn("maxSal", functions.max(col("Salary"))).where(col("sum(Salary)") == col("maxSal"));
 	}
 

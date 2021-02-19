@@ -13,8 +13,8 @@ public class SparkUtils {
 		if(sparkConf == null) {
 			sparkConf = new SparkConf()
 					.setAppName(appName)
-					.setMaster("local[4]")
 					.set("spark.driver.allowMultipleContexts",ApplicationConstants.TRUE)
+					.setMaster("local[4]")
 					.set("spark.sql.warehouse.dir",
 							"D:\\Study_Document\\MyPersonal\\spark-warehouse");
 		}
@@ -35,9 +35,10 @@ public class SparkUtils {
 		if(sparkSession == null) {
 			sparkSession = SparkSession
 					.builder()
-					.appName(appName)
-					.master("local[2]")
-					.config(SparkUtils.createSparkConfig(appName)).getOrCreate();
+					//.appName(appName)
+					//.master("local[2]")
+					.config(SparkUtils.createSparkConfig(appName))
+					.getOrCreate();
 		}
 		return sparkSession;
 	}

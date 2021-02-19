@@ -51,4 +51,25 @@ public class MySQLReadQueryBased implements MySQLConnectivity,Serializable{
 		//convertedDF.show();
 		return convertedDF;
 	}
+	
+	public JavaRDD<String> getDatafromRuleBookTableStr(String query){
+		System.setProperty("hadoop.home.dir", "D:\\Unzip_Softwares\\winutils\\bin");
+		MySQLReadQueryBased readData = new MySQLReadQueryBased();
+		JavaRDD<Row> jdbcDF = readData.createConnection(ApplicationConstants.ONESTOP_SPARK_DB, query).toJavaRDD();
+		
+		//jdbcDF.show();
+		JavaRDD<String> convertedDF = jdbcDF.map(new Function<Row, String>() {
+
+			@Override
+			public String call(Row value) throws Exception {
+				String definition = value.getString(0);
+				
+				return definition;
+			}
+		});
+		//Encoder<RuleBookColumns> ruleBookEncoder = Encoders.bean(RuleBookColumns.class); 
+		//Dataset<RuleBookColumns> convertedDF = jdbcDF.as(ruleBookEncoder);
+		//convertedDF.show();
+		return convertedDF;
+	}
 }

@@ -23,7 +23,7 @@ public class EpamJsonReading {
 		// SQL statements can be run by using the sql methods provided by spark
 		Dataset<Row> empDF = spark.sql("SELECT * FROM Employee");
 		empDF.show();
-		
+		 
 		Dataset<EpamEmployeePOJO> EpamEmpDataset = 
 				empDF.as(Encoders.bean(EpamEmployeePOJO.class));
 		EpamEmpDataset.show();

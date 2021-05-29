@@ -33,8 +33,8 @@ public class ReadDataFromS3 {
 	public static void main(String[] args) {
 		
 		SparkSession spark = SparkUtils.createSparkSession("Read data from S3");
-		spark.sparkContext().hadoopConfiguration().set("fs.s3a.access.key", "AKIAIKCIPFDCXNGHUAGA");
-		spark.sparkContext().hadoopConfiguration().set("fs.s3a.secret.key", "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");
+		spark.sparkContext().hadoopConfiguration().set("fs.s3a.access.key", "<AWS-Access-Key>");
+		spark.sparkContext().hadoopConfiguration().set("fs.s3a.secret.key", "<AWS-Secret-Key>");
 		
 		Dataset<Row> awsFileDataset = spark.read()
 				//.option("header", "false")

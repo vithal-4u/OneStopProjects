@@ -41,6 +41,7 @@ public class DataValidation {
 		System.exit(0);
 		SparkSession spark = SparkUtils.createSparkSession("MySQLWriteData");
 		JavaRDD<Row> csvDS = spark.read().format("csv").option("header","true").load("D:\\Study_Document\\Git_Hub\\OneStopProjects\\resources\\employee_sample.csv").toJavaRDD();
+		
 		JavaRDD<Employee> employeeDF =csvDS.map(new Function<Row, Employee>() {
 			@Override
 			public Employee call(Row rowData) throws Exception {

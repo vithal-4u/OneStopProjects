@@ -19,7 +19,8 @@ public class DatasetTransformations {
 		Dataset<Row> df = spark.read().format("csv").option("header", true)
 				.load("D:\\Study_Document\\Git_Hub\\OneStopProjects\\resources\\name_and_comments.txt");
 
-		df.show(3);
+		df.explain();
+		df.show(3,false);
 
 		// Transformation
 		df.withColumn("full_name", concat(df.col("last_name"), lit(", "), df.col("first_name")))

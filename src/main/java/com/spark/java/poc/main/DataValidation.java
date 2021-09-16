@@ -46,7 +46,7 @@ public class DataValidation {
 			@Override
 			public Employee call(Row rowData) throws Exception {
 				System.out.println(rowData.getString(0)+"--"+rowData.getString(1) +"--"+ rowData.getString(2) +"--"+ rowData.getString(3) +"--"+ rowData.getString(4));
-				return new Employee(Integer.parseInt(rowData.getString(0)), rowData.getString(1),rowData.getString(2),rowData.getString(3),rowData.getString(4));
+				return new Employee(rowData.getString(0), rowData.getString(1),rowData.getString(2),rowData.getString(3),rowData.getString(4), null);
 			}
 		});
 		employeeDF.collect();

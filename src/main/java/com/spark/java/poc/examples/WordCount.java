@@ -80,7 +80,11 @@ public class WordCount {
 	    });
 	    
 	    // Save the word count back out to a text file, causing evaluation.
-	    counts.coalesce(1).saveAsTextFile(outputFile);
+	    //counts.coalesce(1).saveAsTextFile(outputFile);
+	    List<Tuple2<String, Integer>> data = counts.collect();
+		for(Tuple2<String, Integer> str: data) {
+			System.out.println(str);
+		}
 	}
 
 }

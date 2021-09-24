@@ -50,8 +50,8 @@ public class JavaSparkSQLExample {
 	  
 	public static void main(String[] args) throws AnalysisException {
 		SparkSession spark = SparkUtils.createSparkSession("JavaSparkSQLExample");
-		runBasicDataFrameExample(spark);
-		runDatasetCreationExample(spark);
+		//runBasicDataFrameExample(spark);
+		//runDatasetCreationExample(spark);
 		runProgrammaticSchemaExample(spark);
 	}
 
@@ -62,7 +62,7 @@ public class JavaSparkSQLExample {
 	      .toJavaRDD();
 	    
 	 // The schema is encoded in a string
-	    String schemaString = "name age";
+	    String schemaString = "name age mobile";
 	    
 	 // Generate the schema based on the string of schema
 	    List<StructField> fields = new ArrayList();
@@ -85,7 +85,8 @@ public class JavaSparkSQLExample {
 
 	    // SQL can be run over a temporary view created using DataFrames
 	    Dataset<Row> results = spark.sql("SELECT * FROM people");
-
+	    
+	    results.show();
 	    // The results of SQL queries are DataFrames and support all the normal RDD operations
 	    // The columns of a row in the result can be accessed by field index or by field name
 	    Dataset<String> namesDS = results.map(

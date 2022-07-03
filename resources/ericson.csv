@@ -1,0 +1,12 @@
+user_id,course_id,name,email,sub_start_date,sub_end_date,location
+1001,10001,Amit,amit@gmail.com,2019-06-27 00:00:00,2019-06-28 01:00:00,Mumbai-MH
+1002,10002,Rakesh,rakesh@gmail.com,2019-08-11 01:00:00,2020-02-01 01:00:00,Jaipur-Raj
+1003,10001,Neeta,neeta@gmail.com,2019-08-19 02:30:00,2020-02-01 01:00:00,Bangalore-KA
+1004,10002,Venkat,venkat@gmail.com,2019-06-19 02:30:00,2020-02-01 01:00:00,Noida-UP
+1005,10003,Raja,raja@gmail.com,2019-08-27 02:30:00,2020-06-01 01:00:00,Chennai-TM
+1006,10003,Ratul, ratul@gmail.com,2019-08-27 02:30:00,2020-03-15 01:00:00,Chennai-TM
+1007,10002,Reba,reba@gmail.com,2019-06-27 02:30:00,2020-09-09 01:00:00,Delhi-DH
+1008,10001,Shamim,shamim@gmail.com,2019-08-31 02:30:00,2020-01-06 01:00:00,Kolkata-WB
+1009,10002,Niraj,niraj@gmail.com,2019-07-07 02:30:00,2019-12-31 01:00:00,Chennai-TM
+1009,10002,Niraj,niraj@gmail.com,2019-07-07 02:30:00,2019-12-31 01:00:00,Chennai-TM
+1010,10003,ramesh,ramesh@gmail.com,2019-06-27 02:30:00,2020-09-09 01:00:00,Andaman-ANN
